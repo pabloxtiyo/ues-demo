@@ -1,8 +1,9 @@
-import { STATES, TraceableTask } from '@ues-demo/types';
+
 import { useState } from 'react';
 import Add from './add/add';
 import Display from './display/display';
 import styles from './reminder.module.css';
+import {STATES, TraceableTask} from "../index";
 
 /* eslint-disable-next-line */
 export interface ReminderProps {}

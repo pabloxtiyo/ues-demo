@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ues-demo/reminder": ["libs/reminder/src/index.ts"],
-      "@ues-demo/types": ["libs/types/src/index.ts"]
+      "@ues-demo/reminder": ["libs/reminder/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

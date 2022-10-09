@@ -1,5 +1,5 @@
-import { STATES, TraceableTask } from '@ues-demo/types';
 import styles from './display.module.css';
+import {STATES, TraceableTask} from "../../index";
 
 /* eslint-disable-next-line */
 export interface DisplayProps {
@@ -13,7 +13,7 @@ export function Display(props: DisplayProps) {
     <>
       <h2>Items in: {props.state}</h2>
       <ul>
-        {filtered.map(e => <li key={e.task+'-'+props.state}>{e.task}</li>)}
+        {filtered.map(e => <li className={styles['item']} key={e.task+'-'+props.state}>{e.task}</li>)}
       </ul>
     </>
   );
