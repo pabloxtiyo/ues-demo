@@ -1,0 +1,4 @@
+.container > input, label, legend {
+  display: block;
+  margin: 1em 1em;
+}
