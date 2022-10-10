@@ -14,7 +14,7 @@ spec:
   - type: External
     pods:
       metric:
-        name: loadbalancing.googleapis.com|https|backend_latencies
+        name: loadbalancing.googleapis.com|https|request_count
       target:
         type: AverageValue
         averageValue: 1000
