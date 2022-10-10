@@ -14,7 +14,7 @@ import { join } from 'path';
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'storage.db',
+      database: './storage.db',
       synchronize: true,
       logging: true,
       entities: [TraceableTaskEntity],
@@ -29,4 +29,4 @@ import { join } from 'path';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
