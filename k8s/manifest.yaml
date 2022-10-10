@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ues-demo-container
-        image: gcr.io/better-trucks-prod/ues-demo:latest
+        image: gcr.io/serious-curve-364819/ues-demo:latest
         ports:
         - containerPort: 3333
         resources:
