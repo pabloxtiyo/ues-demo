@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ues-demo-deployment
+  name: demo-ues-deployment
   namespace: default
 spec:
   selector:
     matchLabels:
-      name: ues-demo-deployment
+      name: demo-ues-deployment
   replicas: 1
   template:
     metadata:
       labels:
-        name: ues-demo-deployment
+        name: demo-ues-deployment
     spec:
       containers:
-      - name: ues-demo-container
-        image: gcr.io/serious-curve-364819/ues-demo:latest
+      - name: demo-ues-container
+        image: gcr.io/serious-curve-364819/demo-ues:latest
         ports:
         - containerPort: 3333
         resources:
@@ -43,14 +43,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ues-demo-service
+  name: demo-ues-service
   namespace: default
   labels:
-    name: ues-demo-deployment
+    name: demo-ues-deployment
 spec:
   type: NodePort
   selector:
-    name: ues-demo-deployment
+    name: demo-ues-deployment
   ports:
   - protocol: TCP
     port: 80
@@ -68,7 +68,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: ues-demo-service
+      name: demo-ues-service
       port:
         number: 80
   rules:
@@ -78,6 +78,6 @@ spec:
           pathType: ImplementationSpecific
           backend:
             service:
-              name: ues-demo-service
+              name: demo-ues-service
               port:
                 number: 80
