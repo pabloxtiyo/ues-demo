@@ -72,12 +72,12 @@ spec:
       port:
         number: 80
   rules:
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: ues-demo-service
-            port:
-              number: 80
+    - http:
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: ues-demo-service
+              port:
+                number: 80
