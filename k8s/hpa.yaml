@@ -1,23 +1,23 @@
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: demo-ues-hpa
+  name: custom-metric-sd
   namespace: default
 spec:
-  scaleTargetRef: 
-    apiVersion: apps/v1 
-    kind: Deployment 
-    name: demo-ues-deployment
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: custom-metric-sd
   minReplicas: 1
   maxReplicas: 5
   metrics:
-  - type: External
+  - type: Pods
     pods:
       metric:
         name: loadbalancing.googleapis.com|https|request_count
+        selector:
+         matchLabels:
+           resource.labels.forwarding_rule_name: k8s2-fr-qb1bc4r1-default-api-ingress-z3h4fxgh
       target:
         type: AverageValue
-        averageValue: 1000
-      metricSelector: 
-        matchLabels: 
-          resource.labels.backend_name: k8s1-daea7033-bt-mservices-core-api-service-80-eb0aa30d 
+        averageValue: 10
