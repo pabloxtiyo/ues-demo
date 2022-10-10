@@ -14,7 +14,7 @@ export function Reminder(props: ReminderProps) {
     setTasks([...tasks, task]);
   }
   return (
-    <div className={styles['container']}>
+    <div className={styles['container']} data-testid='container'>
       <div><Add append={appendTask}/></div>
       <div><Display key={STATES.PENDING} items={tasks} state={STATES.PENDING} /></div>
       <div><Display key={STATES.IN_PROGRESS} items={tasks} state={STATES.IN_PROGRESS} /></div>
