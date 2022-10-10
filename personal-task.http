@@ -1,0 +1,12 @@
+### create new personal task
+POST http://localhost:3333/api/personal-task
+Content-Type: application/json
+
+{
+  "task": "Other task",
+  "state": "Pending"
+}
+
+### get all personal tasks with state
+GET http://localhost:3333/api/personal-task
+Accept: application/json

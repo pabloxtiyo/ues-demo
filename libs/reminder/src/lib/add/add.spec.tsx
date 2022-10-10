@@ -18,6 +18,7 @@ describe('Add', () => {
       }
     });
     const button = getByRole('button');
+    // @ts-ignore
     expect(input.value).toBe('my new task');
     fireEvent.click(button);
     expect(elements.length).toEqual(1);
