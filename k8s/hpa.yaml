@@ -1,0 +1,23 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ues-demo-hpa
+  namespace: default
+spec:
+  scaleTargetRef: 
+    apiVersion: apps/v1 
+    kind: Deployment 
+    name: ues-demo-deployment
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: External
+    pods:
+      metric:
+        name: loadbalancing.googleapis.com|https|backend_latencies
+      target:
+        type: AverageValue
+        averageValue: 1000
+      metricSelector: 
+        matchLabels: 
+          resource.labels.backend_name: k8s1-daea7033-bt-mservices-core-api-service-80-eb0aa30d 
