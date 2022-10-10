@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       name: ues-demo-deployment
-  replicas: 8
+  replicas: 1
   template:
     metadata:
       labels:
