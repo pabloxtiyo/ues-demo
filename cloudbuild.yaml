@@ -16,7 +16,7 @@ steps:
   args:
   - apply
   - --filename=k8s/manifest.yaml
-  - --location=us-central1
+  - --location=us-central1-a
   - --cluster=${_CLUSTER_NAME}
 images:
 - gcr.io/$PROJECT_ID/demo-ues:$SHORT_SHA
