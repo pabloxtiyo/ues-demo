@@ -9,15 +9,17 @@ spec:
     kind: Deployment
     name: demo-ues-deployment
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 8
   metrics:
-  - type: Pods
-    pods:
+  - external:
       metric:
         name: loadbalancing.googleapis.com|https|request_count
         selector:
-         matchLabels:
-           resource.labels.forwarding_rule_name: k8s2-fr-qb1bc4r1-default-api-ingress-z3h4fxgh
+          matchLabels:
+            resource.labels.forwarding_rule_name: k8s2-fr-oa7ob9np-default-api-ingress-ateos3hr
       target:
+#        type: Value
+#        value: 10000m
         type: AverageValue
-        averageValue: 10
+        averageValue: 4000m
+    type: External
